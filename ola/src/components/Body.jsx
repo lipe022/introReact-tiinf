@@ -7,21 +7,24 @@ function Body(props) {
 
     return (
         <div className='Body'>
-            {props.characters.map((character) => (
+            <div className='grid'>
+                {props.characters.map((character) => (
 
-                <div className='card'>
-                    {character.image ? (
-                        <img src={character.image} alt={character.name} />
-                    ) : (
-                        <div className='noImagem'>indisponivel</div>
+                    <div className='card'>
+                        {character.image ? (
+                            <img src={character.image} alt={character.name} />
+                        ) : (
+                            <div className='noImagem'>indisponivel</div>
 
-                    )}
-                    <h2>Personagem</h2>
-                    <p>
-                        <strong>Casa:</strong> Desconhecida
-                    </p>
-                </div>
-            ))}
+                        )}
+                        <h2>{character.name}</h2>
+                        <p>
+                            <strong>Casa:</strong>
+                            {character.house || "Desconhecida"}
+                        </p>
+                    </div>
+                ))}
+            /</div>
         </div>
     )
 }
